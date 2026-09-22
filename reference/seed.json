@@ -1,0 +1,117 @@
+{
+  "timezone": "Asia/Shanghai",
+  "authorityRoles": ["值班长", "管理员"],
+  "vulnerabilityLevels": [
+    { "level": 1, "name": "极脆弱", "examples": "书画、丝织品、纸质档案，遇水即损" },
+    { "level": 2, "name": "脆弱", "examples": "木器、漆器、彩绘陶器" },
+    { "level": 3, "name": "较稳定", "examples": "瓷器、玉器" },
+    { "level": 4, "name": "稳定", "examples": "石器、青铜器" }
+  ],
+  "building": {
+    "zones": [
+      {
+        "id": "B1-X",
+        "name": "地下一层环形走廊",
+        "level": -1,
+        "rooms": [{ "id": "B1-X-01", "name": "走廊丁字口" }]
+      },
+      {
+        "id": "B1-A",
+        "name": "地下书画库区",
+        "level": -1,
+        "rooms": [
+          { "id": "B1-A-01", "name": "书画一号库" },
+          { "id": "B1-A-02", "name": "书画整理间" }
+        ]
+      },
+      {
+        "id": "B1-B",
+        "name": "地下陶瓷库区",
+        "level": -1,
+        "rooms": [
+          { "id": "B1-B-01", "name": "陶瓷器库房" },
+          { "id": "B1-B-02", "name": "器物缓冲间" }
+        ]
+      },
+      {
+        "id": "B1-C",
+        "name": "地下设备区",
+        "level": -1,
+        "rooms": [
+          { "id": "B1-C-01", "name": "集水井与水泵房" },
+          { "id": "B1-C-02", "name": "地下配电室" }
+        ]
+      },
+      {
+        "id": "G1",
+        "name": "一层大厅",
+        "level": 1,
+        "rooms": [
+          { "id": "G1-01", "name": "大厅临时存放区" },
+          { "id": "G1-02", "name": "大厅东侧通道" }
+        ]
+      }
+    ],
+    "adjacency": [
+      ["B1-A", "B1-X"],
+      ["B1-B", "B1-X"],
+      ["B1-C", "B1-X"],
+      ["B1-X", "G1"]
+    ]
+  },
+  "artifacts": [
+    { "id": "ART-001", "name": "宋·山水立轴", "vulnerability": 1, "roomId": "B1-A-01" },
+    { "id": "ART-002", "name": "明·缂丝佛像", "vulnerability": 1, "roomId": "B1-A-01" },
+    { "id": "ART-003", "name": "清代地契卷宗", "vulnerability": 1, "roomId": "B1-A-02" },
+    { "id": "ART-004", "name": "战国·漆木耳杯", "vulnerability": 2, "roomId": "B1-A-02" },
+    { "id": "ART-005", "name": "唐三彩马", "vulnerability": 2, "roomId": "B1-B-01" },
+    { "id": "ART-006", "name": "元·青花梅瓶", "vulnerability": 3, "roomId": "B1-B-01" },
+    { "id": "ART-007", "name": "商·青铜鼎", "vulnerability": 4, "roomId": "B1-B-02" },
+    { "id": "ART-008", "name": "汉·画像石", "vulnerability": 4, "roomId": "B1-B-02" }
+  ],
+  "resources": [
+    {
+      "id": "RES-PUMP",
+      "name": "潜水抽排泵",
+      "unit": "台",
+      "total": 2,
+      "windows": [{ "kind": "weekly", "weekdays": [1, 2, 3, 4, 5, 6, 7], "start": "06:00", "end": "24:00", "timezone": "Asia/Shanghai" }]
+    },
+    {
+      "id": "RES-GEN",
+      "name": "移动发电机",
+      "unit": "台",
+      "total": 1,
+      "windows": [{ "kind": "weekly", "weekdays": [1, 2, 3, 4, 5, 6, 7], "start": "08:00", "end": "22:00", "timezone": "Asia/Shanghai" }]
+    },
+    {
+      "id": "RES-DEHUM",
+      "name": "工业除湿机",
+      "unit": "台",
+      "total": 3,
+      "windows": [{ "kind": "always" }]
+    }
+  ],
+  "people": [
+    { "id": "P-ZHANG", "name": "张明", "role": "值班长", "phone": "内线 8001" },
+    { "id": "P-LI", "name": "李华", "role": "管理员", "phone": "内线 8002" },
+    { "id": "P-WANG", "name": "王芳", "role": "保护人员", "phone": "内线 8101" },
+    { "id": "P-CHEN", "name": "陈静", "role": "保护人员", "phone": "内线 8102" },
+    { "id": "P-ZHAO", "name": "赵强", "role": "工程保障", "phone": "内网 8201" },
+    { "id": "P-LIU", "name": "刘伟", "role": "安保", "phone": "内网 8301" }
+  ],
+  "drillCases": [
+    {
+      "id": "DRILL-2025-B1",
+      "name": "2025 年地下库房暴雨进水演练",
+      "incidentType": "暴雨地下进水",
+      "zones": ["B1-A", "B1-B"],
+      "playbook": [
+        { "type": "power_cutoff", "roomId": "B1-C-02", "title": "切断地下配电室非必要电源" },
+        { "type": "pump_deploy", "roomId": "B1-X-01", "title": "在走廊丁字口布设抽排泵" },
+        { "type": "sandbag", "roomId": "B1-A-01", "title": "封堵书画库房门坎" },
+        { "type": "artifact_transfer", "roomId": "B1-A-01", "title": "优先转移极脆弱书画至一层大厅" }
+      ]
+    }
+  ]
+}

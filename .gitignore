@@ -8,5 +8,6 @@ dist/
 build/
 coverage/
 .data/
+data/
 .runtime/
 .DS_Store

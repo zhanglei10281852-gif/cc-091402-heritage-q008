@@ -5,10 +5,16 @@ services:
       target: runtime
     environment:
       PORT: 8000
+      DATA_FILE: /app/data/events.jsonl
     ports:
       - "8000:8000"
+    volumes:
+      - disaster-data:/app/data
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8000/health"]
       interval: 5s
       timeout: 2s
       retries: 5
+
+volumes:
+  disaster-data:
