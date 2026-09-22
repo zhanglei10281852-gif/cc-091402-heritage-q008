@@ -1,0 +1,13 @@
+{
+  "commanderRoles": ["值班长"],
+  "staff": [
+    { "id": "staff-01", "name": "王建国", "role": "值班长", "regularShift": "08:00-20:00" },
+    { "id": "staff-02", "name": "李秀兰", "role": "值班长", "regularShift": "20:00-08:00" },
+    { "id": "staff-03", "name": "张文博", "role": "保护人员", "regularShift": "08:00-20:00" },
+    { "id": "staff-04", "name": "陈静", "role": "保护人员", "regularShift": "08:00-20:00" },
+    { "id": "staff-05", "name": "刘一鸣", "role": "保护人员", "regularShift": "20:00-08:00" },
+    { "id": "staff-06", "name": "赵大勇", "role": "设备员", "regularShift": "08:00-20:00" },
+    { "id": "staff-07", "name": "孙丽", "role": "设备员", "regularShift": "20:00-08:00" },
+    { "id": "staff-08", "name": "周安", "role": "安保员", "regularShift": "08:00-20:00" }
+  ]
+}

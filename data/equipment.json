@@ -1,0 +1,15 @@
+{
+  "equipment": [
+    {
+      "type": "抽水泵",
+      "totalQuantity": 6,
+      "unavailable": [
+        { "from": "2026-09-22T14:00:00+08:00", "to": "2026-09-22T16:00:00+08:00", "quantity": 2, "reason": "例行保养" }
+      ]
+    },
+    { "type": "发电机", "totalQuantity": 2, "unavailable": [] },
+    { "type": "除湿机", "totalQuantity": 4, "unavailable": [] },
+    { "type": "搬运车", "totalQuantity": 3, "unavailable": [] },
+    { "type": "沙袋", "totalQuantity": 200, "unavailable": [] }
+  ]
+}

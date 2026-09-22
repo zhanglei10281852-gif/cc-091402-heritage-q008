@@ -1,0 +1,17 @@
+{
+  "fragilityWeights": { "一级": 3, "二级": 2, "三级": 1 },
+  "artifacts": [
+    { "id": "artifact-0001", "name": "宋代山水画轴", "zoneId": "B2-01", "fragility": "一级" },
+    { "id": "artifact-0002", "name": "明代书法手卷", "zoneId": "B2-01", "fragility": "一级" },
+    { "id": "artifact-0003", "name": "清代绢本设色册页", "zoneId": "B2-01", "fragility": "一级" },
+    { "id": "artifact-0004", "name": "民国木版水印画集", "zoneId": "B2-01", "fragility": "二级" },
+    { "id": "artifact-0005", "name": "唐代三彩马", "zoneId": "B2-02", "fragility": "二级" },
+    { "id": "artifact-0006", "name": "宋代青瓷梅瓶", "zoneId": "B2-02", "fragility": "二级" },
+    { "id": "artifact-0007", "name": "元代青花罐", "zoneId": "B2-02", "fragility": "二级" },
+    { "id": "artifact-0008", "name": "汉代陶俑一组", "zoneId": "B2-02", "fragility": "三级" },
+    { "id": "artifact-0009", "name": "商代青铜鼎", "zoneId": "B2-03", "fragility": "三级" },
+    { "id": "artifact-0010", "name": "西周青铜簋", "zoneId": "B2-03", "fragility": "三级" },
+    { "id": "artifact-0011", "name": "明代鎏金铜佛", "zoneId": "B2-03", "fragility": "二级" },
+    { "id": "artifact-0012", "name": "清代铁炮模型", "zoneId": "B2-03", "fragility": "三级" }
+  ]
+}

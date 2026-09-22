@@ -1,0 +1,14 @@
+{
+  "zones": [
+    { "id": "B2-01", "name": "地下二层书画库房", "level": "B2", "adjacent": ["B2-走廊"] },
+    { "id": "B2-02", "name": "地下二层陶瓷库房", "level": "B2", "adjacent": ["B2-走廊"] },
+    { "id": "B2-03", "name": "地下二层金属器库房", "level": "B2", "adjacent": ["B2-走廊"] },
+    { "id": "B2-走廊", "name": "地下二层走廊", "level": "B2", "adjacent": ["B2-01", "B2-02", "B2-03", "B1-楼梯间"] },
+    { "id": "B1-楼梯间", "name": "地下一层楼梯间", "level": "B1", "adjacent": ["B2-走廊", "B1-01", "B1-缓冲间"] },
+    { "id": "B1-01", "name": "地下一层临时修复室", "level": "B1", "adjacent": ["B1-楼梯间"] },
+    { "id": "B1-缓冲间", "name": "地下一层文物缓冲间", "level": "B1", "adjacent": ["B1-楼梯间", "1F-门厅"] },
+    { "id": "1F-门厅", "name": "一层门厅", "level": "1F", "adjacent": ["B1-缓冲间", "1F-展厅", "室外-装车区"] },
+    { "id": "1F-展厅", "name": "一层临时展厅", "level": "1F", "adjacent": ["1F-门厅"] },
+    { "id": "室外-装车区", "name": "室外装车区", "level": "OUT", "adjacent": ["1F-门厅"] }
+  ]
+}
